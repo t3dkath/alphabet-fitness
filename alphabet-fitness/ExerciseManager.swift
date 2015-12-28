@@ -16,16 +16,20 @@ class ExerciseManager {
     
     private var _exerciseList = [Exercise]()
     private var _categoryList = [Category]()
+    private var _wordoutWord = ""
     private var _currentWorkout = [Exercise]()
     private var _workoutPosition = 0
     
     var exerciseList: [Exercise] { return _exerciseList }
     var categoryList: [Category] { return _categoryList }
+    var workoutWord: String { return _wordoutWord }
     var currentWorkout: [Exercise] { return _currentWorkout }
     var workoutPosition: Int {
         get { return _workoutPosition }
         set { _workoutPosition = workoutPosition }
     }
+    
+    let wordOfTheDay = "Feel the burn"
     
     let ALPHABET = ["A", "B"]
     let CATEGORY_DICT = [
@@ -65,7 +69,12 @@ class ExerciseManager {
         }
     }
     
-    func getWorkoutTime() -> String {
+    func getWorkoutTime(workout: String? = "") -> String {
+        
+        if workout != "" {
+            setWorkoutForWord(workout!)
+        }
+        
         let workoutTimeInSeconds = (_currentWorkout.count * 40) - 10
         let wcMinutes: Int = Int(workoutTimeInSeconds / 60)
         let wcSecounds: Int = Int(workoutTimeInSeconds - (wcMinutes * 60))
@@ -106,6 +115,7 @@ class ExerciseManager {
     }
     
     func setWorkoutForWord(word: String) {
+        _wordoutWord = word
         _currentWorkout = [Exercise]()
         
         let wordArray = Array(word.uppercaseString.characters)

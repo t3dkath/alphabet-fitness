@@ -8,22 +8,43 @@
 
 import UIKit
 
-class AlphaVC: UIViewController {
-
-    var exerciseView: ExerciseVC!
+class AlphaVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    
+    @IBAction func backBtnPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func shuffleBtnPressed(sender: AnyObject) {
+        ExerciseManager.instance.shuffleExercises()
+        tableView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier("ExerciseCell") as? ExerciseCell {
+            cell.configureCell(ExerciseManager.instance.exerciseList[indexPath.row])
+            return cell
+            
+        } else {
+            return ExerciseCell()
+        }
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ExerciseManager.instance.exerciseList.count
+    }
 }

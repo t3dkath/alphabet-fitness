@@ -8,22 +8,43 @@
 
 import UIKit
 
-class WordVC: UIViewController {
+class WordVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var exerciseView: ExerciseVC!
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var workoutTitleLbl: UILabel!
+    @IBOutlet weak var workoutTimeLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        workoutTitleLbl.text = ExerciseManager.instance.workoutWord.uppercaseString
+        workoutTimeLbl.text = ExerciseManager.instance.getWorkoutTime()
+    }
+    
+    @IBAction func backBtnPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier("ExerciseCell") as? ExerciseCell {
+            cell.configureCell(ExerciseManager.instance.currentWorkout[indexPath.row])
+            return cell
+            
+        } else {
+            return ExerciseCell()
+        }
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ExerciseManager.instance.currentWorkout.count
     }
 
 }

@@ -10,51 +10,44 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    @IBOutlet weak var wordInput: UITextField!
+    @IBOutlet weak var wotdTitleLbl: UILabel!
+    @IBOutlet weak var wotdTimeLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBarHidden = true
+        wotdTitleLbl.text = ExerciseManager.instance.wordOfTheDay.uppercaseString
+        wotdTimeLbl.text = ExerciseManager.instance.getWorkoutTime(ExerciseManager.instance.wordOfTheDay)
         
-        //shuffle exercises
-        ExerciseManager.instance.shuffleExercises()
-        
-        
-        //get from parsed word
-        ExerciseManager.instance.setWorkoutForWord("aa")
-        let currentWorkout = ExerciseManager.instance.currentWorkout
-        
-        if currentWorkout.count > 0 {
-            for exercise in currentWorkout {
-                print(exercise.category)
-            }
-        } else {
-            print("You entered a character string with no recognisable letters, please try again")
-        }
-        
-        
-        //get workout time
-        print(ExerciseManager.instance.getWorkoutTime())
-        
-        
-        //get only from single category
-        let allExercises = ExerciseManager.instance.exerciseList
-        let coreExercises = allExercises.filter( { return $0.category.name == "Core" } )
-        print(coreExercises)
+//        //get workout time
+//        print(ExerciseManager.instance.getWorkoutTime())
+//
     }
     
-    @IBAction func showAlphaVC() {
-        //alphaView = AlphaVC()
-        //self.presentViewController(alphaView, animated: true, completion: nil)
+    @IBAction func showAllExercises() {
+        let allExercisesView = self.storyboard?.instantiateViewControllerWithIdentifier("AlphaView") as! AlphaVC
+        self.presentViewController(allExercisesView, animated: true, completion: nil)
+    }
+    
+    @IBAction func showWordExercises() {
+        if let word = wordInput.text where word != "" {
+            ExerciseManager.instance.setWorkoutForWord(word)
+        
+            let wordExercises = self.storyboard?.instantiateViewControllerWithIdentifier("WordView") as! WordVC
+            self.presentViewController(wordExercises, animated: true, completion: nil)
+        
+        } else {
+            print("no word")
+        }
     }
 
+    @IBAction func showWOTDExercises(sender: AnyObject) {
+        ExerciseManager.instance.setWorkoutForWord("Feel the burn")
+        
+        let wordExercises = self.storyboard?.instantiateViewControllerWithIdentifier("WordView") as! WordVC
+        self.presentViewController(wordExercises, animated: true, completion: nil)
+    }
 
 }
 
