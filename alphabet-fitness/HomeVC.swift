@@ -14,6 +14,10 @@ class HomeVC: UIViewController {
     @IBOutlet weak var wotdTitleLbl: UILabel!
     @IBOutlet weak var wotdTimeLbl: UILabel!
     
+    @IBOutlet weak var errorLbl: UILabel!
+    @IBOutlet weak var errorBgImg: UIImageView!
+    @IBOutlet weak var errorCloseBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +27,11 @@ class HomeVC: UIViewController {
         wotdTimeLbl.text = ExerciseManager.instance.getWorkoutTime(ExerciseManager.instance.wordOfTheDay)
     }
     
+    @IBAction func onErrorCloseBtnPress(sender: AnyObject) {
+        errorLbl.hidden = true
+        errorBgImg.hidden = true
+        errorCloseBtn.hidden = true
+    }
     @IBAction func showAllExercises() {
         performSegueWithIdentifier("AlphaSegue", sender: self)
     }
@@ -32,13 +41,21 @@ class HomeVC: UIViewController {
             ExerciseManager.instance.setWorkoutForWord(word)
             performSegueWithIdentifier("WordSegue", sender: self)
         } else {
-            print("no word")
+            showError("Not a word")
         }
     }
 
     @IBAction func showWOTDExercises(sender: AnyObject) {
         ExerciseManager.instance.setWorkoutForWord("Feel the burn")
         performSegueWithIdentifier("WordSegue", sender: self)
+    }
+    
+    func showError(msg: String) {
+        errorLbl.text = msg
+        
+        errorLbl.hidden = false
+        errorBgImg.hidden = false
+        errorCloseBtn.hidden = false
     }
 
 }

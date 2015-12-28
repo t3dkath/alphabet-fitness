@@ -22,10 +22,10 @@ class ExerciseVC: UIViewController {
     @IBOutlet weak var prevExerciseBtn: UIButton!
     
     var exercise: Exercise!
+    var final: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadExerciseDetail()
     }
     
@@ -34,9 +34,13 @@ class ExerciseVC: UIViewController {
     }
 
     @IBAction func onNextExercisePress(sender: AnyObject) {
-        let newPos = ExerciseManager.instance.workoutPosition + 1
-        ExerciseManager.instance.setWorkoutPosition(newPos)
-        loadExerciseDetail()
+        if !final {
+            let newPos = ExerciseManager.instance.workoutPosition + 1
+            ExerciseManager.instance.setWorkoutPosition(newPos)
+            loadExerciseDetail()
+        } else {
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
     }
     @IBAction func onPrevExercisePress(sender: AnyObject) {
         let newPos = ExerciseManager.instance.workoutPosition - 1
@@ -45,14 +49,13 @@ class ExerciseVC: UIViewController {
     }
     
     func loadExerciseDetail() {
-        nextExerciseBtn.enabled = true
         prevExerciseBtn.enabled = true
-        nextExerciseBtn.alpha = 1
         prevExerciseBtn.alpha = 1
+        final = false
         
         if ExerciseManager.instance.workoutPosition >= ExerciseManager.instance.currentWorkout.count - 1 {
-            nextExerciseBtn.enabled = false
-            nextExerciseBtn.alpha = 0.5
+            nextExerciseBtn.setTitle("FINISH", forState: .Normal)
+            final = true
         }
         if ExerciseManager.instance.workoutPosition == 0 {
             prevExerciseBtn.enabled = false
