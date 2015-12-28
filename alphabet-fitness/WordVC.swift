@@ -20,7 +20,7 @@ class WordVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(45, 0, 0, 0)
         
         workoutTitleLbl.text = ExerciseManager.instance.workoutWord.uppercaseString
         workoutTimeLbl.text = ExerciseManager.instance.getWorkoutTime()

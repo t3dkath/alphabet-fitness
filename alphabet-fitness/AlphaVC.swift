@@ -18,7 +18,7 @@ class AlphaVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(45, 0, 0, 0)
     }
     
     
