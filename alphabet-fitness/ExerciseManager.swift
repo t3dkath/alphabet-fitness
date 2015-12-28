@@ -18,16 +18,13 @@ class ExerciseManager {
     private var _categoryList = [Category]()
     private var _wordoutWord = ""
     private var _currentWorkout = [Exercise]()
-    private var _workoutPosition = 0
+    private var _workoutPosition: Int = 0
     
     var exerciseList: [Exercise] { return _exerciseList }
     var categoryList: [Category] { return _categoryList }
     var workoutWord: String { return _wordoutWord }
     var currentWorkout: [Exercise] { return _currentWorkout }
-    var workoutPosition: Int {
-        get { return _workoutPosition }
-        set { _workoutPosition = workoutPosition }
-    }
+    var workoutPosition: Int { return _workoutPosition }
     
     let wordOfTheDay = "Feel the burn"
     
@@ -40,7 +37,7 @@ class ExerciseManager {
     ]
     var exercise_dict = [
         ["name": "Sit-Up", "image": "ex-situp", "description": "how to do a sit up", "category": "Core"],
-        ["name": "Press-Up", "image": "ex-pressip", "description": "how to do a press up", "category": "Arms"]
+        ["name": "Press-Up", "image": "_exercise2", "description": "how to do a press up", "category": "Arms"]
     ]
     
     init() {
@@ -58,10 +55,16 @@ class ExerciseManager {
     private func seedExercises() {
         var i = 0
         for letter in ALPHABET {
+            var exImage: UIImage!
             let exName = self.exercise_dict[i]["name"]
-            let exImage = self.exercise_dict[i]["image"]
             let exDesc = self.exercise_dict[i]["description"]
             let exCat = self.categoryList.filter( { return $0.name == self.exercise_dict[i]["category"] } )
+            
+            if let img = UIImage(named: self.exercise_dict[i]["image"]!) {
+                exImage = img
+            } else {
+                exImage = UIImage(named: "_exercise")
+            }
             
             let exercise = Exercise(identifier: letter, name: exName!, image: exImage!, description: exDesc!, category: exCat.first!)
             self._exerciseList.append(exercise)
@@ -115,15 +118,19 @@ class ExerciseManager {
     }
     
     func setWorkoutForWord(word: String) {
-        _wordoutWord = word
-        _currentWorkout = [Exercise]()
+        self._wordoutWord = word
+        self._currentWorkout = [Exercise]()
         
         let wordArray = Array(word.uppercaseString.characters)
         for letter in wordArray {
             if let exercise = getExerciseAt(String(letter)) {
-                _currentWorkout.append(exercise)
+                self._currentWorkout.append(exercise)
             }
         }
+    }
+    
+    func setWorkoutPosition(pos: Int) {
+        self._workoutPosition = pos
     }
     
 }

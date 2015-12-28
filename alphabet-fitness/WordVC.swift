@@ -28,6 +28,11 @@ class WordVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func startBtnPressed(sender: AnyObject) {
+        let exerciseDetail = self.storyboard?.instantiateViewControllerWithIdentifier("ExerciseView") as! ExerciseVC
+        self.presentViewController(exerciseDetail, animated: true, completion: nil)
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("ExerciseCell") as? ExerciseCell {

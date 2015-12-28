@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yFa-B7-DW8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SkR-Cu-ZRU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -244,11 +244,13 @@
                         <outlet property="wordInput" destination="VLA-bf-ibn" id="ZKi-5c-tZH"/>
                         <outlet property="wotdTimeLbl" destination="lrv-14-YA7" id="7Qm-Li-sxK"/>
                         <outlet property="wotdTitleLbl" destination="HFD-Rx-7At" id="Nen-5E-b5a"/>
+                        <segue destination="FQY-LZ-eAe" kind="show" identifier="WordSegue" id="Cfg-Na-DgH"/>
+                        <segue destination="XUV-tD-6ch" kind="presentation" identifier="AlphaSegue" id="YnM-51-10H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aj5-sU-CcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="274"/>
+            <point key="canvasLocation" x="2608" y="274"/>
         </scene>
         <!--WordVC-->
         <scene sceneID="OXq-Cg-s4y">
@@ -259,14 +261,14 @@
                         <viewControllerLayoutGuide type="bottom" id="GoN-RJ-Kd6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vjA-Dh-f8w">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eZ-wT-Q21" userLabel="Side Strip">
-                                <rect key="frame" x="0.0" y="0.0" width="40" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qkl-yw-ehd" userLabel="Border">
-                                        <rect key="frame" x="39" y="0.0" width="1" height="600"/>
+                                        <rect key="frame" x="39" y="0.0" width="1" height="800"/>
                                         <color key="backgroundColor" red="0.82745098039215681" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="T9d-qV-Egn"/>
@@ -296,7 +298,7 @@
                                     <action selector="backBtnPressed:" destination="FQY-LZ-eAe" eventType="touchUpInside" id="cDI-HC-fE9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEEL THE BURN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Pgn-Q5-jYa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FEEL THE BURN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Pgn-Q5-jYa">
                                 <rect key="frame" x="60" y="25" width="480" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="CrH-ff-7ds"/>
@@ -316,7 +318,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 MINUTES &amp; 40 SECONDS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ls4-eC-48l">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="12 MINUTES &amp; 40 SECONDS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ls4-eC-48l">
                                 <rect key="frame" x="60" y="51" width="480" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="s5R-gC-gDh"/>
@@ -326,7 +328,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="107" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cXn-j0-47R">
-                                <rect key="frame" x="0.0" y="151" width="600" height="449"/>
+                                <rect key="frame" x="0.0" y="151" width="600" height="649"/>
                                 <color key="backgroundColor" red="0.0" green="0.40594319472402357" blue="0.84160657051282051" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExerciseCell" rowHeight="90" id="BpQ-xL-d98" customClass="ExerciseCell" customModule="alphabet_fitness" customModuleProvider="target">
@@ -405,6 +407,9 @@
                                     <constraint firstAttribute="width" constant="124" id="eRB-FO-c6O"/>
                                 </constraints>
                                 <state key="normal" image="start-btn"/>
+                                <connections>
+                                    <action selector="startBtnPressed:" destination="FQY-LZ-eAe" eventType="touchUpInside" id="8Sj-ST-iFL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -438,11 +443,12 @@
                         <outlet property="tableView" destination="cXn-j0-47R" id="0jT-QD-mIq"/>
                         <outlet property="workoutTimeLbl" destination="Ls4-eC-48l" id="quc-mt-gwv"/>
                         <outlet property="workoutTitleLbl" destination="Pgn-Q5-jYa" id="Nef-cK-UC5"/>
+                        <segue destination="3l0-dB-M6L" kind="show" id="NzD-xL-2Tb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTu-AM-es0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="-184"/>
+            <point key="canvasLocation" x="3378" y="-184"/>
         </scene>
         <!--AlphaVC-->
         <scene sceneID="iJP-Ya-2G4">
@@ -658,11 +664,12 @@
                     <navigationItem key="navigationItem" id="IJS-wE-4g4"/>
                     <connections>
                         <outlet property="tableView" destination="Jz3-0g-ASa" id="mw5-sm-05M"/>
+                        <segue destination="3l0-dB-M6L" kind="show" id="Lag-47-9J2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfZ-aB-xh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582" y="600"/>
+            <point key="canvasLocation" x="3378" y="716"/>
         </scene>
         <!--ExerciseVC-->
         <scene sceneID="c21-UA-l8o">
@@ -676,7 +683,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="650"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_exercise2" translatesAutoresizingMaskIntoConstraints="NO" id="7oU-Ch-9Hb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7oU-Ch-9Hb">
                                 <rect key="frame" x="148" y="81" width="304" height="258"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="304" id="3ya-2p-6lh"/>
@@ -700,6 +707,9 @@
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="back-btn"/>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="3l0-dB-M6L" eventType="touchUpInside" id="82T-4j-Ha0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npi-dS-9Ay">
                                 <rect key="frame" x="239" y="20" width="123" height="62"/>
@@ -712,10 +722,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F68-20-9qP">
-                                <rect key="frame" x="0.0" y="444" width="600" height="116"/>
+                                <rect key="frame" x="0.0" y="417" width="600" height="116.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="N3c-ke-BHG">
-                                        <rect key="frame" x="20" y="20" width="560" height="76"/>
+                                        <rect key="frame" x="20" y="20" width="560" height="76.5"/>
                                         <string key="text">Stand facing bench or sturdy elevated platform. Place hands on edge of bench or platform, slightly wider than shoulder width. Position forefoot back from bench or platform with arms and body straight. Arms should be perpendicular to body. Push body up until arms are extended. Repeat.</string>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -729,7 +739,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AzQ-Nf-FQN">
-                                        <rect key="frame" x="0.0" y="116" width="600" height="1"/>
+                                        <rect key="frame" x="0.0" y="115" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.82745098039999998" green="0.82745098039999998" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="cuv-vE-zqJ"/>
@@ -741,6 +751,7 @@
                                     <constraint firstItem="RXZ-Ja-2JV" firstAttribute="leading" secondItem="F68-20-9qP" secondAttribute="leading" id="84l-p5-cq5"/>
                                     <constraint firstItem="AzQ-Nf-FQN" firstAttribute="leading" secondItem="F68-20-9qP" secondAttribute="leading" id="Cdb-Yb-GDw"/>
                                     <constraint firstAttribute="trailing" secondItem="N3c-ke-BHG" secondAttribute="trailing" constant="20" id="MzZ-7a-0f7"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="P22-1w-4ol"/>
                                     <constraint firstAttribute="trailing" secondItem="AzQ-Nf-FQN" secondAttribute="trailing" id="PcZ-UX-x5p"/>
                                     <constraint firstItem="N3c-ke-BHG" firstAttribute="top" secondItem="F68-20-9qP" secondAttribute="top" constant="20" id="Qbg-3M-ldi"/>
                                     <constraint firstAttribute="bottom" secondItem="N3c-ke-BHG" secondAttribute="bottom" constant="20" id="Sn3-ms-M5s"/>
@@ -762,6 +773,9 @@
                                         <state key="normal" title="PREVIOUS">
                                             <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onPrevExercisePress:" destination="3l0-dB-M6L" eventType="touchUpInside" id="xON-Do-nVS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGv-VW-M1Q">
                                         <rect key="frame" x="290" y="0.0" width="270" height="55"/>
@@ -771,6 +785,9 @@
                                         <state key="normal" title="NEXT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onNextExercisePress:" destination="3l0-dB-M6L" eventType="touchUpInside" id="xiT-1O-PUi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -778,17 +795,17 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bkj-tl-j9U">
-                                <rect key="frame" x="20" y="349" width="560" height="75"/>
+                                <rect key="frame" x="20" y="349" width="560" height="48"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat-arms" translatesAutoresizingMaskIntoConstraints="NO" id="bWj-0h-eaE">
-                                        <rect key="frame" x="0.0" y="17" width="41" height="41"/>
+                                        <rect key="frame" x="0.0" y="3.5" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="BAI-Dh-zw0"/>
                                             <constraint firstAttribute="width" constant="41" id="vGk-qb-3Ut"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UnH-Tt-Oqf">
-                                        <rect key="frame" x="61" y="14" width="499" height="48"/>
+                                        <rect key="frame" x="61" y="0.0" width="499" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incline Press-Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c60-5g-Z4N">
                                                 <rect key="frame" x="0.0" y="0.0" width="499" height="30"/>
@@ -854,20 +871,48 @@
                                 <exclude reference="pHx-6D-hgu"/>
                                 <exclude reference="x7a-BY-aqj"/>
                                 <exclude reference="RTV-ui-rrW"/>
+                                <exclude reference="SeG-TP-OIC"/>
                                 <exclude reference="bVS-mU-N0q"/>
                             </mask>
                         </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="650"/>
+                    <connections>
+                        <outlet property="catImage" destination="bWj-0h-eaE" id="pX6-mo-baO"/>
+                        <outlet property="catTitleLbl" destination="970-bh-7yh" id="mCN-8e-YmK"/>
+                        <outlet property="exDescLbl" destination="N3c-ke-BHG" id="9Tf-31-Uf8"/>
+                        <outlet property="exImage" destination="7oU-Ch-9Hb" id="7h0-J8-Xn2"/>
+                        <outlet property="exTitleLbl" destination="c60-5g-Z4N" id="sZo-iG-6zg"/>
+                        <outlet property="letterLbl" destination="npi-dS-9Ay" id="uOH-bX-pED"/>
+                        <outlet property="nextExerciseBtn" destination="pGv-VW-M1Q" id="Qo0-mv-4Nh"/>
+                        <outlet property="prevExerciseBtn" destination="Mq7-OA-ndd" id="m5K-a1-zBe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnX-Sk-Wjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3414" y="216"/>
+            <point key="canvasLocation" x="4226" y="216"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6qc-a6-UC0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SkR-Cu-ZRU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OPT-LR-mdE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yFa-B7-DW8" kind="relationship" relationship="rootViewController" id="iD3-1p-QXs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEA-5P-Lm4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="274"/>
         </scene>
     </scenes>
     <resources>
-        <image name="_exercise2" width="245" height="350"/>
         <image name="back-btn" width="30" height="24"/>
         <image name="cat-arms" width="47" height="47"/>
         <image name="down-btn" width="17" height="11"/>
@@ -880,4 +925,7 @@
         <image name="shuffle-btn" width="124" height="124"/>
         <image name="start-btn" width="124" height="124"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lag-47-9J2"/>
+    </inferredMetricsTieBreakers>
 </document>
