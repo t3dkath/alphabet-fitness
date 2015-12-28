@@ -7,29 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB8E90A01C30BE240035BD8A /* WordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E909E1C30BE240035BD8A /* WordVC.swift */; };
+		FB8E90A61C30BE750035BD8A /* AlphaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E90A41C30BE750035BD8A /* AlphaVC.swift */; };
+		FB8E90AA1C30BE8F0035BD8A /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E90A81C30BE8F0035BD8A /* ExerciseVC.swift */; };
 		FBB283641C3053060033FBD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB283631C3053060033FBD8 /* AppDelegate.swift */; };
 		FBB283661C3053060033FBD8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB283651C3053060033FBD8 /* HomeVC.swift */; };
 		FBB2836B1C3053060033FBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB2836A1C3053060033FBD8 /* Assets.xcassets */; };
 		FBB2836E1C3053060033FBD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB2836C1C3053060033FBD8 /* LaunchScreen.storyboard */; };
-		FBB283761C3053770033FBD8 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB283751C3053770033FBD8 /* HomeVC.xib */; };
 		FBB2837B1C3055FA0033FBD8 /* ExerciseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2837A1C3055FA0033FBD8 /* ExerciseManager.swift */; };
 		FBB2837D1C3057EA0033FBD8 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2837C1C3057EA0033FBD8 /* Exercise.swift */; };
 		FBB7AFC21C30AB2B008AC8B6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7AFC11C30AB2B008AC8B6 /* Category.swift */; };
 		FBB7AFC41C30B292008AC8B6 /* Extentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7AFC31C30B292008AC8B6 /* Extentsions.swift */; };
+		FBD72FDE1C30C79900C2FED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD72FDD1C30C79900C2FED1 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB8E909E1C30BE240035BD8A /* WordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordVC.swift; sourceTree = "<group>"; };
+		FB8E90A41C30BE750035BD8A /* AlphaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaVC.swift; sourceTree = "<group>"; };
+		FB8E90A81C30BE8F0035BD8A /* ExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseVC.swift; sourceTree = "<group>"; };
 		FBB283601C3053060033FBD8 /* alphabet-fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alphabet-fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB283631C3053060033FBD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB283651C3053060033FBD8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		FBB2836A1C3053060033FBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBB2836D1C3053060033FBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBB2836F1C3053060033FBD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBB283751C3053770033FBD8 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		FBB2837A1C3055FA0033FBD8 /* ExerciseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseManager.swift; sourceTree = "<group>"; };
 		FBB2837C1C3057EA0033FBD8 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		FBB7AFC11C30AB2B008AC8B6 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		FBB7AFC31C30B292008AC8B6 /* Extentsions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentsions.swift; sourceTree = "<group>"; };
+		FBD72FDD1C30C79900C2FED1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,7 @@
 		FBB283771C30537D0033FBD8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FBB283751C3053770033FBD8 /* HomeVC.xib */,
+				FBD72FDD1C30C79900C2FED1 /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -95,6 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				FBB283651C3053060033FBD8 /* HomeVC.swift */,
+				FB8E909E1C30BE240035BD8A /* WordVC.swift */,
+				FB8E90A41C30BE750035BD8A /* AlphaVC.swift */,
+				FB8E90A81C30BE8F0035BD8A /* ExerciseVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -166,8 +175,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD72FDE1C30C79900C2FED1 /* Main.storyboard in Resources */,
 				FBB2836E1C3053060033FBD8 /* LaunchScreen.storyboard in Resources */,
-				FBB283761C3053770033FBD8 /* HomeVC.xib in Resources */,
 				FBB2836B1C3053060033FBD8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +194,9 @@
 				FBB2837D1C3057EA0033FBD8 /* Exercise.swift in Sources */,
 				FBB283661C3053060033FBD8 /* HomeVC.swift in Sources */,
 				FBB283641C3053060033FBD8 /* AppDelegate.swift in Sources */,
+				FB8E90AA1C30BE8F0035BD8A /* ExerciseVC.swift in Sources */,
+				FB8E90A01C30BE240035BD8A /* WordVC.swift in Sources */,
+				FB8E90A61C30BE750035BD8A /* AlphaVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

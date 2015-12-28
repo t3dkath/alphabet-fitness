@@ -29,8 +29,10 @@ class ExerciseManager {
     
     let ALPHABET = ["A", "B"]
     let CATEGORY_DICT = [
-        ["name": "Core", "image": "core-ico"],
-        ["name": "Arms", "image": "arms-ico"],
+        ["name": "Core",        "image": "cat-core"],
+        ["name": "Arms",        "image": "cat-arms"],
+        ["name": "Plyometics",  "image": "cat-heart"],
+        ["name": "Legs",        "image": "cat-legs"]
     ]
     var exercise_dict = [
         ["name": "Sit-Up", "image": "ex-situp", "description": "how to do a sit up", "category": "Core"],
@@ -44,7 +46,7 @@ class ExerciseManager {
     
     private func seedCategories() {
         for category in CATEGORY_DICT {
-            let cat = Category(name: category["name"]!, image: category["image"]!)
+            let cat = Category(name: category["name"]!, image: UIImage(named: category["image"]!)!)
             self._categoryList.append(cat)
         }
     }

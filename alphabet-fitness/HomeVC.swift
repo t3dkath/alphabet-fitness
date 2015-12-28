@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -21,6 +21,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBarHidden = true
         
         //shuffle exercises
         ExerciseManager.instance.shuffleExercises()
@@ -48,10 +49,10 @@ class HomeVC: UIViewController {
         let coreExercises = allExercises.filter( { return $0.category.name == "Core" } )
         print(coreExercises)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func showAlphaVC() {
+        //alphaView = AlphaVC()
+        //self.presentViewController(alphaView, animated: true, completion: nil)
     }
 
 
