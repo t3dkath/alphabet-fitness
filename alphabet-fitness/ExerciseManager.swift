@@ -97,6 +97,9 @@ class ExerciseManager {
             else { workoutTime += "SECONDS" }
         }
         
+        if workoutTime == "-10 SECONDS" {
+            workoutTime = "0 SECONDS"
+        }
         return workoutTime
     }
     

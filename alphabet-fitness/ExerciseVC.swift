@@ -30,7 +30,7 @@ class ExerciseVC: UIViewController {
     }
     
     @IBAction func backBtnPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     @IBAction func onNextExercisePress(sender: AnyObject) {

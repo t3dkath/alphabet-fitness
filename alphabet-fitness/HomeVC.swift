@@ -17,6 +17,8 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBarHidden = true
+        
         wotdTitleLbl.text = ExerciseManager.instance.wordOfTheDay.uppercaseString
         wotdTimeLbl.text = ExerciseManager.instance.getWorkoutTime(ExerciseManager.instance.wordOfTheDay)
     }
