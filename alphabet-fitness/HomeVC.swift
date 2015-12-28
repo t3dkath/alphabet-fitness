@@ -54,7 +54,7 @@ class HomeVC: UIViewController, UITextFieldDelegate {
             ExerciseManager.instance.setWorkoutForWord(word)
             performSegueWithIdentifier("WordSegue", sender: self)
         } else {
-            showError("Hmm, we didn't detect a character string with any recognisable letters, please try again")
+            showError("Uh oh! Just letters please.")
         }
     }
 
@@ -78,7 +78,6 @@ class HomeVC: UIViewController, UITextFieldDelegate {
             ExerciseManager.instance.setWorkoutForWord("")
             return false
         }
-        
         
         return true
     }

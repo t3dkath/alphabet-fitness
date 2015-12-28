@@ -27,6 +27,9 @@ class ExerciseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadExerciseDetail()
+        
+        nextExerciseBtn.layer.cornerRadius = 5.0
+        prevExerciseBtn.layer.cornerRadius = 5.0
     }
     
     @IBAction func backBtnPressed(sender: AnyObject) {
