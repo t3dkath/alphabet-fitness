@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var wordInput: UITextField!
     @IBOutlet weak var wotdTitleLbl: UILabel!
@@ -26,6 +26,8 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBarHidden = true
+        
+        wordInput.delegate = self
         
         wotdTitleLbl.text = ExerciseManager.instance.wordOfTheDay.uppercaseString
         wotdTimeLbl.text = ExerciseManager.instance.getWorkoutTime(ExerciseManager.instance.wordOfTheDay)
@@ -46,7 +48,9 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func showWordExercises() {
-        if let word = wordInput.text where word != "" {
+        let word = wordInput.text!
+        
+        if isValidWord(word) {
             ExerciseManager.instance.setWorkoutForWord(word)
             performSegueWithIdentifier("WordSegue", sender: self)
         } else {
@@ -57,6 +61,26 @@ class HomeVC: UIViewController {
     @IBAction func showWOTDExercises(sender: AnyObject) {
         ExerciseManager.instance.setWorkoutForWord("Feel the burn")
         performSegueWithIdentifier("WordSegue", sender: self)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
+    func isValidWord(word: String?) -> Bool {
+        if word == "" {
+            return false
+        }
+        
+        ExerciseManager.instance.setWorkoutForWord(word!)
+        if ExerciseManager.instance.currentWorkout.count <= 0 {
+            ExerciseManager.instance.setWorkoutForWord("")
+            return false
+        }
+        
+        
+        return true
     }
     
     func showError(msg: String) {
