@@ -462,7 +462,7 @@
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="back-btn"/>
                                 <connections>
-                                    <action selector="backBtnPressed:" destination="FQY-LZ-eAe" eventType="touchUpInside" id="cDI-HC-fE9"/>
+                                    <action selector="backBtnPressed" destination="FQY-LZ-eAe" eventType="touchUpInside" id="chy-kE-gnv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEEL THE BURN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pgn-Q5-jYa">
@@ -726,7 +726,7 @@
                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="back-btn"/>
                                 <connections>
-                                    <action selector="backBtnPressed:" destination="XUV-tD-6ch" eventType="touchUpInside" id="F3Y-E6-Ayv"/>
+                                    <action selector="backBtnPressed" destination="XUV-tD-6ch" eventType="touchUpInside" id="RyQ-ef-gid"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -891,7 +891,7 @@
                                             <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="onPrevExercisePress:" destination="3l0-dB-M6L" eventType="touchUpInside" id="xON-Do-nVS"/>
+                                            <action selector="onPrevExercisePress" destination="3l0-dB-M6L" eventType="touchUpInside" id="Bci-Lz-Feh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGv-VW-M1Q" customClass="MainButton" customModule="alphabet_fitness" customModuleProvider="target">
@@ -903,7 +903,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="onNextExercisePress:" destination="3l0-dB-M6L" eventType="touchUpInside" id="xiT-1O-PUi"/>
+                                            <action selector="onNextExercisePress" destination="3l0-dB-M6L" eventType="touchUpInside" id="RRe-xz-BNM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1009,7 +1009,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnX-Sk-Wjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4226" y="216"/>
+            <point key="canvasLocation" x="4224" y="249"/>
         </scene>
         <!--FinishedVC-->
         <scene sceneID="nXZ-rO-eP8">
@@ -1074,7 +1074,6 @@ Go grab a smoothie, you deserve it.</string>
                                         </state>
                                         <connections>
                                             <action selector="onFinishWorkoutPressed:" destination="Agg-Xn-yib" eventType="touchUpInside" id="cZY-1B-kir"/>
-                                            <action selector="onNextExercisePress:" destination="3l0-dB-M6L" eventType="touchUpInside" id="DYp-Ua-nLW"/>
                                         </connections>
                                     </button>
                                 </subviews>

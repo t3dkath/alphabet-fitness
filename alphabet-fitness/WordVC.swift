@@ -24,13 +24,28 @@ class WordVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         workoutTitleLbl.text = ExerciseManager.instance.workoutWord.uppercaseString
         workoutTimeLbl.text = ExerciseManager.instance.getWorkoutTime()
+    
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
+    }
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                backBtnPressed()
+            default: break
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func backBtnPressed(sender: AnyObject) {
+    @IBAction func backBtnPressed() {
         self.navigationController?.popViewControllerAnimated(true)
     }
     

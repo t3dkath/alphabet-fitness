@@ -37,7 +37,7 @@ class ExerciseVC: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
 
-    @IBAction func onNextExercisePress(sender: AnyObject) {
+    @IBAction func onNextExercisePress() {
         if !final {
             let newPos = ExerciseManager.instance.workoutPosition + 1
             ExerciseManager.instance.setWorkoutPosition(newPos)
@@ -46,7 +46,7 @@ class ExerciseVC: UIViewController {
             performSegueWithIdentifier("FinishWorkout", sender: self)
         }
     }
-    @IBAction func onPrevExercisePress(sender: AnyObject) {
+    @IBAction func onPrevExercisePress() {
         let newPos = ExerciseManager.instance.workoutPosition - 1
         ExerciseManager.instance.setWorkoutPosition(newPos)
         loadExerciseDetail()

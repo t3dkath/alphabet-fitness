@@ -31,6 +31,23 @@ class HomeVC: UIViewController, UITextFieldDelegate, BWWalkthroughViewController
         
         randomWordTitleLbl.text = ExerciseManager.instance.randomWord.uppercaseString
         randomWordTimeLbl.text = ExerciseManager.instance.getWorkoutTime(ExerciseManager.instance.randomWord)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
+    }
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Up:
+                if exercisesBtn.enabled {
+                    showAllExercises()
+                }
+            default: break
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

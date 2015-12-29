@@ -19,6 +19,21 @@ class AlphaVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.dataSource = self
         
         tableView.contentInset = UIEdgeInsetsMake(45, 0, 0, 0)
+    
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+        self.view.addGestureRecognizer(swipeDown)
+    }
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Down:
+                backBtnPressed()
+            default: break
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,7 +41,7 @@ class AlphaVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     
-    @IBAction func backBtnPressed(sender: AnyObject) {
+    @IBAction func backBtnPressed() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
