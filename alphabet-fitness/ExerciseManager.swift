@@ -30,19 +30,48 @@ class ExerciseManager {
     
     let RANDOM_WORD_ARR = ["Feel the burn", "Fitness", "Witness the fitness"]
     
-    let ALPHABET = ["A", "B"]
+    let ALPHABET = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     let CATEGORY_DICT = [
         ["id": "1", "name": "Core",        "image": "cat-core"],
         ["id": "2", "name": "Upper-body",  "image": "cat-arms"],
         ["id": "3", "name": "Plyometics",  "image": "cat-heart"],
-        ["id": "4", "name": "Lower-body",  "image": "cat-legs"]
+        ["id": "4", "name": "Lower-body",  "image": "cat-legs"],
+        ["id": "5", "name": "Full-body",  "image": "cat-legs"]
     ]
     var exercise_dict = [
-        ["name": "Sit-Up", "image": "ex-situp", "description": "how to do a sit up", "category": "1"],
-        ["name": "Press-Up", "image": "_exercise2", "description": "how to do a press up", "category": "2"]
+        ["name": "Wall Sit", "image": "", "description": "", "category": "4"],
+        ["name": "Press/Push-Up", "image": "", "description": "", "category": "2"],
+        ["name": "Crunch", "image": "", "description": "", "category": "1"],
+        ["name": "Bench Dip", "image": "", "description": "", "category": "2"],
+        ["name": "Squat", "image": "", "description": "", "category": "4"],
+        ["name": "Squat Jump", "image": "", "description": "", "category": "3"],
+        ["name": "Incline Press/Push-Up", "image": "", "description": "", "category": "2"],
+        ["name": "Jumping Jack", "image": "", "description": "", "category": "3"],
+        ["name": "Burpee", "image": "", "description": "", "category": "3"],
+        ["name": "Tuck Jump", "image": "", "description": "", "category": "3"],
+        ["name": "Bear Crawl", "image": "", "description": "", "category": "5"],
+        ["name": "Mountain Climber", "image": "", "description": "", "category": "5"],
+        ["name": "Plank", "image": "", "description": "", "category": "1"],
+        ["name": "Hollow Man", "image": "", "description": "", "category": "1"],
+        ["name": "Lunge", "image": "", "description": "", "category": "4"],
+        ["name": "Russian Twist", "image": "", "description": "", "category": "1"],
+        ["name": "Bicycle Crunch", "image": "", "description": "", "category": "1"],
+        ["name": "Calf Raise", "image": "", "description": "", "category": "4"],
+        ["name": "Step Up", "image": "", "description": "", "category": "4"],
+        ["name": "Bulgarian Split Squat", "image": "", "description": "", "category": "4"],
+        ["name": "Sit Up", "image": "", "description": "", "category": "1"],
+        ["name": "Reverse Crunch", "image": "", "description": "", "category": "1"],
+        ["name": "Superman", "image": "", "description": "", "category": "1"],
+        ["name": "Leg Raise", "image": "", "description": "", "category": "1"],
+        ["name": "Glute Bridge", "image": "", "description": "", "category": "4"],
+        ["name": "Spiderman Push-Up", "image": "", "description": "", "category": "2"]
+        
     ]
     
     init() {
+        print(ALPHABET.count)
+        print(exercise_dict.count)
+        
         self.setRandomWord()
         
         //if exercise list already in memory

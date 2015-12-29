@@ -31,6 +31,7 @@ class WordVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     @IBAction func startBtnPressed(sender: AnyObject) {
+        ExerciseManager.instance.setWorkoutPosition(0)
         performSegueWithIdentifier("ExerciseView", sender: self)
     }
     
