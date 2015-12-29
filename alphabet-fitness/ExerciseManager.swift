@@ -28,7 +28,7 @@ class ExerciseManager {
     var workoutPosition: Int { return _workoutPosition }
     var randomWord: String { return _randomWord }
     
-    let RANDOM_WORD_ARR = ["Feel the burn", "Fitness", "Witness the fitness"]
+    let RANDOM_WORD_ARR = ["Feel the burn", "Fitness", "Witness the fitness", "Suck it up", "No pain, no gain", "Go hard or go home!", "Stay strong", "Do you even lift bro?", "Nailed it"]
     
     let ALPHABET = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     let CATEGORY_DICT = [
@@ -69,9 +69,6 @@ class ExerciseManager {
     ]
     
     init() {
-        print(ALPHABET.count)
-        print(exercise_dict.count)
-        
         self.setRandomWord()
         
         //if exercise list already in memory
@@ -177,6 +174,11 @@ class ExerciseManager {
     
     func setWorkoutPosition(pos: Int) {
         self._workoutPosition = pos
+    }
+    
+    func getWorkoutsForCategory(categoryId: String) -> [Exercise] {
+        let categoryExercises = self._exerciseList.filter( { return $0.category.id == categoryId } )
+        return categoryExercises
     }
     
 }

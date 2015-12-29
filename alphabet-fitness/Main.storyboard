@@ -61,11 +61,11 @@
                                     <constraint firstAttribute="height" constant="1" id="CB3-bB-Juz"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="FSR-cC-xj4" userLabel="Word Of The Day">
-                                <rect key="frame" x="20" y="161" width="500" height="72"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="FSR-cC-xj4" userLabel="Word Of The Day">
+                                <rect key="frame" x="20" y="161" width="510" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RANDOM WORKOUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJ1-xR-e6l">
-                                        <rect key="frame" x="0.0" y="0.0" width="500" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="510" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="aKm-Vl-uA3"/>
                                         </constraints>
@@ -73,11 +73,11 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="-4" translatesAutoresizingMaskIntoConstraints="NO" id="Fhf-Nd-NbH">
-                                        <rect key="frame" x="0.0" y="19" width="500" height="53"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-4" translatesAutoresizingMaskIntoConstraints="NO" id="Fhf-Nd-NbH">
+                                        <rect key="frame" x="0.0" y="19" width="510" height="53"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FEEL THE BURN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="HFD-Rx-7At">
-                                                <rect key="frame" x="0.0" y="0.0" width="500" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEEL THE BURN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="HFD-Rx-7At">
+                                                <rect key="frame" x="0.0" y="0.0" width="510" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Ck3-lI-qFE"/>
                                                     <constraint firstAttribute="height" constant="62" id="V4y-KB-ggz"/>
@@ -96,8 +96,8 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="12 MINUTES &amp; 40 SECONDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrv-14-YA7">
-                                                <rect key="frame" x="0.0" y="32" width="500" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 MINUTES &amp; 40 SECONDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrv-14-YA7">
+                                                <rect key="frame" x="0.0" y="32" width="510" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Pi3-2d-J22"/>
                                                 </constraints>
@@ -282,7 +282,7 @@
                             <constraint firstItem="dyZ-xB-HHo" firstAttribute="leading" secondItem="1dl-J0-gfp" secondAttribute="leading" id="bgC-B4-KQ3"/>
                             <constraint firstItem="wC5-ql-hKd" firstAttribute="centerY" secondItem="5dK-67-ZuO" secondAttribute="centerY" id="dmC-vf-hCx"/>
                             <constraint firstItem="dyZ-xB-HHo" firstAttribute="leading" secondItem="FSR-cC-xj4" secondAttribute="trailing" id="fbH-we-Msg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FSR-cC-xj4" secondAttribute="trailing" constant="60" id="fjx-uT-g1A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FSR-cC-xj4" secondAttribute="trailing" constant="50" id="fjx-uT-g1A"/>
                             <constraint firstItem="Jes-nd-vet" firstAttribute="top" secondItem="php-j6-Sb1" secondAttribute="bottom" constant="36" id="h9W-Sq-LL4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jes-nd-vet" secondAttribute="trailing" constant="60" id="kMR-6i-M3K"/>
                             <constraint firstItem="nSg-D3-k7o" firstAttribute="top" secondItem="7B3-1k-U8r" secondAttribute="bottom" constant="-29" id="lgl-IN-fCR"/>

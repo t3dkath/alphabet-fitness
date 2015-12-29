@@ -59,7 +59,7 @@ class HomeVC: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func showRandomWordExercises(sender: AnyObject) {
-        ExerciseManager.instance.setWorkoutForWord("Feel the burn")
+        ExerciseManager.instance.setWorkoutForWord(ExerciseManager.instance.randomWord)
         performSegueWithIdentifier("WordSegue", sender: self)
     }
     
