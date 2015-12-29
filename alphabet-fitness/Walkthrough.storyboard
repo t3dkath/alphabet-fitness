@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcO-8K-kho">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcO-8K-kho">
                                 <rect key="frame" x="525" y="76" width="60" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="TeE-qB-Uhh"/>
@@ -43,7 +43,7 @@
                                     <rect key="frame" x="189" y="523" width="23" height="37"/>
                                 </variation>
                             </pageControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letter-header-bg" translatesAutoresizingMaskIntoConstraints="NO" id="7re-sl-h9K">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="letter-header-bg" translatesAutoresizingMaskIntoConstraints="NO" id="7re-sl-h9K">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="101"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Cjl-Ot-BFg">
@@ -172,20 +172,20 @@ Just pick a word and get ready to feel the burn!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UEO-yL-wbq">
-                                <rect key="frame" x="150" y="128" width="300" height="293"/>
+                                <rect key="frame" x="145" y="128" width="310" height="293"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="30secs" translatesAutoresizingMaskIntoConstraints="NO" id="3TV-Wf-1I3">
-                                        <rect key="frame" x="78" y="0.0" width="145" height="145"/>
+                                        <rect key="frame" x="83" y="0.0" width="145" height="145"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="145" id="ER6-os-LgR"/>
                                             <constraint firstAttribute="width" constant="145" id="Qq1-Sf-Mes"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-rC-wQ9">
-                                        <rect key="frame" x="0.0" y="155" width="300" height="138"/>
+                                        <rect key="frame" x="0.0" y="155" width="310" height="138"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Getting started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3W-pO-sm2">
-                                                <rect key="frame" x="62" y="0.0" width="177" height="36"/>
+                                                <rect key="frame" x="67" y="0.0" width="177" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="145" id="3Jn-FV-WOY"/>
                                                     <constraint firstAttribute="height" constant="31" id="YG7-7h-0kn"/>
@@ -200,14 +200,14 @@ Just pick a word and get ready to feel the burn!
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u55-nC-Y40">
-                                                <rect key="frame" x="0.0" y="38" width="300" height="100"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u55-nC-Y40">
+                                                <rect key="frame" x="0.0" y="38" width="310" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="1cM-aX-191"/>
-                                                    <constraint firstAttribute="width" constant="300" id="Tlc-Wp-q4J"/>
+                                                    <constraint firstAttribute="width" constant="310" id="Tlc-Wp-q4J"/>
                                                 </constraints>
                                                 <string key="text">Pick any word or phrase and Alphabet Fitness will generate a workout for you.
-For a quick and intense workout, do each excerise for 30 seconds with a 1 minute rest, the total length of workout is up to you.</string>
+For a quick and intense workout, do each excerise for 30 seconds followed by a 10 second rest, the total length of workout is up to you.</string>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
