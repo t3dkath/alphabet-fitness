@@ -19,35 +19,42 @@ class ExerciseManager {
     private var _wordoutWord = ""
     private var _currentWorkout = [Exercise]()
     private var _workoutPosition: Int = 0
+    private var _randomWord: String = ""
     
     var exerciseList: [Exercise] { return _exerciseList }
     var categoryList: [Category] { return _categoryList }
     var workoutWord: String { return _wordoutWord }
     var currentWorkout: [Exercise] { return _currentWorkout }
     var workoutPosition: Int { return _workoutPosition }
+    var randomWord: String { return _randomWord }
     
-    let wordOfTheDay = "Feel the burn"
+    let RANDOM_WORD_ARR = ["Feel the burn", "Fitness", "Witness the fitness"]
     
     let ALPHABET = ["A", "B"]
     let CATEGORY_DICT = [
-        ["name": "Core",        "image": "cat-core"],
-        ["name": "Arms",        "image": "cat-arms"],
-        ["name": "Plyometics",  "image": "cat-heart"],
-        ["name": "Legs",        "image": "cat-legs"]
+        ["id": "1", "name": "Core",        "image": "cat-core"],
+        ["id": "2", "name": "Upper-body",  "image": "cat-arms"],
+        ["id": "3", "name": "Plyometics",  "image": "cat-heart"],
+        ["id": "4", "name": "Lower-body",  "image": "cat-legs"]
     ]
     var exercise_dict = [
-        ["name": "Sit-Up", "image": "ex-situp", "description": "how to do a sit up", "category": "Core"],
-        ["name": "Press-Up", "image": "_exercise2", "description": "how to do a press up", "category": "Arms"]
+        ["name": "Sit-Up", "image": "ex-situp", "description": "how to do a sit up", "category": "1"],
+        ["name": "Press-Up", "image": "_exercise2", "description": "how to do a press up", "category": "2"]
     ]
     
     init() {
-        self.seedCategories()
-        self.seedExercises()
+        self.setRandomWord()
+        
+        //if exercise list already in memory
+            //loadexercise
+        //else
+            self.seedCategories()
+            self.seedExercises()
     }
     
     private func seedCategories() {
         for category in CATEGORY_DICT {
-            let cat = Category(name: category["name"]!, image: UIImage(named: category["image"]!)!)
+            let cat = Category(id: category["id"]!, name: category["name"]!, image: UIImage(named: category["image"]!)!)
             self._categoryList.append(cat)
         }
     }
@@ -58,7 +65,7 @@ class ExerciseManager {
             var exImage: UIImage!
             let exName = self.exercise_dict[i]["name"]
             let exDesc = self.exercise_dict[i]["description"]
-            let exCat = self.categoryList.filter( { return $0.name == self.exercise_dict[i]["category"] } )
+            let exCat = self.categoryList.filter( { return $0.id == self.exercise_dict[i]["category"] } )
             
             if let img = UIImage(named: self.exercise_dict[i]["image"]!) {
                 exImage = img
@@ -70,6 +77,13 @@ class ExerciseManager {
             self._exerciseList.append(exercise)
             i++
         }
+        
+        //save exercise list
+    }
+    
+    private func setRandomWord() {
+        let rand = arc4random_uniform(UInt32(self.RANDOM_WORD_ARR.count))
+        self._randomWord = self.RANDOM_WORD_ARR[Int(rand)]
     }
     
     func getWorkoutTime(workout: String? = "") -> String {

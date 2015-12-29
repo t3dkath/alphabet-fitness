@@ -11,14 +11,14 @@ import UIKit
 class HomeVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var wordInput: UITextField!
-    @IBOutlet weak var wotdTitleLbl: UILabel!
-    @IBOutlet weak var wotdTimeLbl: UILabel!
+    @IBOutlet weak var randomWordTitleLbl: UILabel!
+    @IBOutlet weak var randomWordTimeLbl: UILabel!
     
     @IBOutlet weak var errorLbl: UILabel!
     @IBOutlet weak var errorBgImg: UIImageView!
     @IBOutlet weak var errorCloseBtn: UIButton!
     
-    @IBOutlet weak var wotdBtn: UIButton!
+    @IBOutlet weak var randomWordBtn: UIButton!
     @IBOutlet weak var inputBtn: UIButton!
     @IBOutlet weak var exercisesBtn: UIButton!
     
@@ -29,8 +29,8 @@ class HomeVC: UIViewController, UITextFieldDelegate {
         
         wordInput.delegate = self
         
-        wotdTitleLbl.text = ExerciseManager.instance.wordOfTheDay.uppercaseString
-        wotdTimeLbl.text = ExerciseManager.instance.getWorkoutTime(ExerciseManager.instance.wordOfTheDay)
+        randomWordTitleLbl.text = ExerciseManager.instance.randomWord.uppercaseString
+        randomWordTimeLbl.text = ExerciseManager.instance.getWorkoutTime(ExerciseManager.instance.randomWord)
     }
     
     @IBAction func onErrorCloseBtnPress(sender: AnyObject) {
@@ -39,7 +39,7 @@ class HomeVC: UIViewController, UITextFieldDelegate {
         errorCloseBtn.hidden = true
         
         wordInput.enabled = true
-        wotdBtn.enabled = true
+        randomWordBtn.enabled = true
         inputBtn.enabled = true
         exercisesBtn.enabled = true
     }
@@ -58,7 +58,7 @@ class HomeVC: UIViewController, UITextFieldDelegate {
         }
     }
 
-    @IBAction func showWOTDExercises(sender: AnyObject) {
+    @IBAction func showRandomWordExercises(sender: AnyObject) {
         ExerciseManager.instance.setWorkoutForWord("Feel the burn")
         performSegueWithIdentifier("WordSegue", sender: self)
     }
@@ -90,7 +90,7 @@ class HomeVC: UIViewController, UITextFieldDelegate {
         errorCloseBtn.hidden = false
         
         wordInput.enabled = false
-        wotdBtn.enabled = false
+        randomWordBtn.enabled = false
         inputBtn.enabled = false
         exercisesBtn.enabled = false
     }

@@ -11,13 +11,16 @@ import UIKit
 
 class Category {
     
+    var _id: String!
     var _name: String!
     var _image: UIImage!
     
+    var id: String { return _id }
     var name: String { return _name }
     var image: UIImage { return _image }
     
-    init(name: String, image: UIImage) {
+    init(id: String, name: String, image: UIImage) {
+        self._id = id
         self._name = name
         self._image = image
     }
