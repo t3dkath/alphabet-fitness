@@ -24,16 +24,44 @@ class ExerciseVC: UIViewController {
     var exercise: Exercise!
     var final: Bool = false
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadExerciseDetail()
+    
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeLeft)
+    }
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                if prevExerciseBtn.enabled {
+                    onPrevExercisePress()
+                } else {
+                    backBtnPressed()
+                }
+            case UISwipeGestureRecognizerDirection.Left:
+                if nextExerciseBtn.enabled {
+                    onNextExercisePress()
+                }
+            default: break
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func backBtnPressed(sender: AnyObject) {
+    @IBAction func backBtnPressed() {
         self.navigationController?.popViewControllerAnimated(true)
     }
 
@@ -41,7 +69,7 @@ class ExerciseVC: UIViewController {
         if !final {
             let newPos = ExerciseManager.instance.workoutPosition + 1
             ExerciseManager.instance.setWorkoutPosition(newPos)
-            loadExerciseDetail()
+            loadNewExercise()
         } else {
             performSegueWithIdentifier("FinishWorkout", sender: self)
         }
@@ -49,8 +77,17 @@ class ExerciseVC: UIViewController {
     @IBAction func onPrevExercisePress() {
         let newPos = ExerciseManager.instance.workoutPosition - 1
         ExerciseManager.instance.setWorkoutPosition(newPos)
-        loadExerciseDetail()
+        
+        self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    
+    func loadNewExercise() {
+        let nextExercise:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ExerciseView") as UIViewController
+        
+        self.navigationController?.pushViewController(nextExercise, animated: true)
+    }
+    
     
     func loadExerciseDetail() {
         prevExerciseBtn.enabled = true
