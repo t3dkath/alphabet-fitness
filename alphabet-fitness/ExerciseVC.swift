@@ -32,6 +32,10 @@ class ExerciseVC: UIViewController {
         prevExerciseBtn.layer.cornerRadius = 5.0
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     @IBAction func backBtnPressed(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -42,7 +46,7 @@ class ExerciseVC: UIViewController {
             ExerciseManager.instance.setWorkoutPosition(newPos)
             loadExerciseDetail()
         } else {
-            self.navigationController?.popToRootViewControllerAnimated(true)
+            performSegueWithIdentifier("FinishWorkout", sender: self)
         }
     }
     @IBAction func onPrevExercisePress(sender: AnyObject) {

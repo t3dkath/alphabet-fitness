@@ -21,6 +21,10 @@ class AlphaVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.contentInset = UIEdgeInsetsMake(45, 0, 0, 0)
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     
     @IBAction func backBtnPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)

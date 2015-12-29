@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController, UITextFieldDelegate {
+class HomeVC: UIViewController, UITextFieldDelegate, BWWalkthroughViewControllerDelegate {
     
     @IBOutlet weak var wordInput: UITextField!
     @IBOutlet weak var randomWordTitleLbl: UILabel!
@@ -31,6 +31,40 @@ class HomeVC: UIViewController, UITextFieldDelegate {
         
         randomWordTitleLbl.text = ExerciseManager.instance.randomWord.uppercaseString
         randomWordTimeLbl.text = ExerciseManager.instance.getWorkoutTime(ExerciseManager.instance.randomWord)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if !userDefaults.boolForKey("walkthroughPresented") {
+            showWalkthrough()
+            userDefaults.setBool(true, forKey: "walkthroughPresented")
+            userDefaults.synchronize()
+        }
+    }
+    
+    @IBAction func showWalkthrough() {
+        let stb = UIStoryboard(name: "Walkthrough", bundle: nil)
+        let walkthrough = stb.instantiateViewControllerWithIdentifier("walk0") as! BWWalkthroughViewController
+        let page_one = stb.instantiateViewControllerWithIdentifier("walk1") as UIViewController
+        let page_two = stb.instantiateViewControllerWithIdentifier("walk2") as UIViewController
+        
+        walkthrough.delegate = self
+        walkthrough.addViewController(page_one)
+        walkthrough.addViewController(page_two)
+        
+        self.presentViewController(walkthrough, animated: true, completion: nil)
+    }
+    
+    @IBAction func walkthroughCloseButtonPressed() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func onErrorCloseBtnPress(sender: AnyObject) {

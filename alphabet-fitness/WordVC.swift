@@ -26,6 +26,10 @@ class WordVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         workoutTimeLbl.text = ExerciseManager.instance.getWorkoutTime()
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     @IBAction func backBtnPressed(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }

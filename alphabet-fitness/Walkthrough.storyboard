@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Walkthrough View Controller-->
+        <scene sceneID="wLd-uP-2td">
+            <objects>
+                <viewController storyboardIdentifier="walk0" id="uQK-Vb-wr2" customClass="BWWalkthroughViewController" customModule="alphabet_fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kY7-fw-CFI"/>
+                        <viewControllerLayoutGuide type="bottom" id="eNm-Ny-aiT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h63-gR-K2j">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Main" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3E-wZ-jSb">
+                                <rect key="frame" x="279" y="101" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcO-8K-kho">
+                                <rect key="frame" x="277" y="550" width="46" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="close:" destination="uQK-Vb-wr2" eventType="touchUpInside" id="pDp-1M-FvT"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="gkW-Jh-e51">
+                                <rect key="frame" x="281" y="505" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.85098039219999999" green="0.20392156859999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="WcO-8K-kho" firstAttribute="centerX" secondItem="h63-gR-K2j" secondAttribute="centerX" id="1rH-ga-FmZ"/>
+                            <constraint firstItem="WcO-8K-kho" firstAttribute="top" secondItem="gkW-Jh-e51" secondAttribute="bottom" constant="8" id="G0r-6o-xsg"/>
+                            <constraint firstItem="eNm-Ny-aiT" firstAttribute="top" secondItem="WcO-8K-kho" secondAttribute="bottom" constant="20" id="LdY-jB-iEX"/>
+                            <constraint firstItem="u3E-wZ-jSb" firstAttribute="top" secondItem="kY7-fw-CFI" secondAttribute="bottom" constant="81" id="ML2-Ni-qOe"/>
+                            <constraint firstItem="u3E-wZ-jSb" firstAttribute="centerX" secondItem="h63-gR-K2j" secondAttribute="centerX" id="bBp-nE-D87"/>
+                            <constraint firstItem="gkW-Jh-e51" firstAttribute="centerX" secondItem="h63-gR-K2j" secondAttribute="centerX" id="nwd-qL-AjP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="WcO-8K-kho" id="H8M-T8-Kqn"/>
+                        <outlet property="pageControl" destination="gkW-Jh-e51" id="6wu-zQ-JpV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TS5-jB-Tug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2887" y="-1676"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="WlT-Uv-aTj">
+            <objects>
+                <viewController storyboardIdentifier="walk1" id="tho-10-RK8" customClass="BWWalkthroughPageViewController" customModule="alphabet_fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0jd-j5-Uu4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xgj-hg-5Na"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sY2-SD-doD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Page 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTO-sQ-fd7">
+                                <rect key="frame" x="255" y="289" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hTO-sQ-fd7" firstAttribute="centerY" secondItem="sY2-SD-doD" secondAttribute="centerY" id="LaD-S2-L8c"/>
+                            <constraint firstItem="hTO-sQ-fd7" firstAttribute="centerX" secondItem="sY2-SD-doD" secondAttribute="centerX" id="cn9-zU-fVi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hb3-AN-prh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3561" y="-1676"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="5KG-hw-rMO">
+            <objects>
+                <viewController storyboardIdentifier="walk2" id="kHW-kL-K3K" customClass="BWWalkthroughPageViewController" customModule="alphabet_fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nIF-6n-CC5"/>
+                        <viewControllerLayoutGuide type="bottom" id="VDt-vd-lt2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fwg-7w-aD9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Page 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rb-Wu-kqc">
+                                <rect key="frame" x="255" y="289" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2rb-Wu-kqc" firstAttribute="centerX" secondItem="Fwg-7w-aD9" secondAttribute="centerX" id="QhS-Vu-GAb"/>
+                            <constraint firstItem="2rb-Wu-kqc" firstAttribute="centerY" secondItem="Fwg-7w-aD9" secondAttribute="centerY" id="rNT-t5-jRF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ibt-mQ-iyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4227" y="-1676"/>
+        </scene>
+    </scenes>
+</document>

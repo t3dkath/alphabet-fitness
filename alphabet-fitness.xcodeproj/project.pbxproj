@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB6C63A11C328F4E00F76563 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6C639F1C328F4E00F76563 /* BWWalkthroughPageViewController.swift */; };
+		FB6C63A21C328F4E00F76563 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6C63A01C328F4E00F76563 /* BWWalkthroughViewController.swift */; };
+		FB6C63A61C329CA500F76563 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6C63A51C329CA500F76563 /* Walkthrough.storyboard */; };
+		FB6C63A81C329FE900F76563 /* FinishedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6C63A71C329FE900F76563 /* FinishedVC.swift */; };
 		FB8E90A01C30BE240035BD8A /* WordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E909E1C30BE240035BD8A /* WordVC.swift */; };
 		FB8E90A61C30BE750035BD8A /* AlphaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E90A41C30BE750035BD8A /* AlphaVC.swift */; };
 		FB8E90AA1C30BE8F0035BD8A /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E90A81C30BE8F0035BD8A /* ExerciseVC.swift */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB6C639F1C328F4E00F76563 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		FB6C63A01C328F4E00F76563 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
+		FB6C63A51C329CA500F76563 /* Walkthrough.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
+		FB6C63A71C329FE900F76563 /* FinishedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedVC.swift; sourceTree = "<group>"; };
 		FB8E909E1C30BE240035BD8A /* WordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordVC.swift; sourceTree = "<group>"; };
 		FB8E90A41C30BE750035BD8A /* AlphaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaVC.swift; sourceTree = "<group>"; };
 		FB8E90A81C30BE8F0035BD8A /* ExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseVC.swift; sourceTree = "<group>"; };
@@ -87,6 +95,7 @@
 			children = (
 				FBD72FDD1C30C79900C2FED1 /* Main.storyboard */,
 				FBC1AC4B1C319ADD00DC546B /* ExerciseCell.swift */,
+				FB6C63A51C329CA500F76563 /* Walkthrough.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -103,10 +112,13 @@
 		FBB283791C3053890033FBD8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FB6C639F1C328F4E00F76563 /* BWWalkthroughPageViewController.swift */,
+				FB6C63A01C328F4E00F76563 /* BWWalkthroughViewController.swift */,
 				FBB283651C3053060033FBD8 /* HomeVC.swift */,
 				FB8E909E1C30BE240035BD8A /* WordVC.swift */,
 				FB8E90A41C30BE750035BD8A /* AlphaVC.swift */,
 				FB8E90A81C30BE8F0035BD8A /* ExerciseVC.swift */,
+				FB6C63A71C329FE900F76563 /* FinishedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -179,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBD72FDE1C30C79900C2FED1 /* Main.storyboard in Resources */,
+				FB6C63A61C329CA500F76563 /* Walkthrough.storyboard in Resources */,
 				FBB2836E1C3053060033FBD8 /* LaunchScreen.storyboard in Resources */,
 				FBB2836B1C3053060033FBD8 /* Assets.xcassets in Resources */,
 			);
@@ -197,7 +210,10 @@
 				FBC1AC4C1C319ADD00DC546B /* ExerciseCell.swift in Sources */,
 				FBB2837D1C3057EA0033FBD8 /* Exercise.swift in Sources */,
 				FBB283661C3053060033FBD8 /* HomeVC.swift in Sources */,
+				FB6C63A11C328F4E00F76563 /* BWWalkthroughPageViewController.swift in Sources */,
 				FBB283641C3053060033FBD8 /* AppDelegate.swift in Sources */,
+				FB6C63A81C329FE900F76563 /* FinishedVC.swift in Sources */,
+				FB6C63A21C328F4E00F76563 /* BWWalkthroughViewController.swift in Sources */,
 				FB8E90AA1C30BE8F0035BD8A /* ExerciseVC.swift in Sources */,
 				FB8E90A01C30BE240035BD8A /* WordVC.swift in Sources */,
 				FB8E90A61C30BE750035BD8A /* AlphaVC.swift in Sources */,
