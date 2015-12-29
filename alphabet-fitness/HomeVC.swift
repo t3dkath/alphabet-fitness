@@ -40,6 +40,8 @@ class HomeVC: UIViewController, UITextFieldDelegate, BWWalkthroughViewController
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 1)
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(red: 217/255, green: 52/255, blue: 51/255, alpha: 1)
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
@@ -50,7 +52,8 @@ class HomeVC: UIViewController, UITextFieldDelegate, BWWalkthroughViewController
         }
     }
     
-    @IBAction func showWalkthrough() {
+    func showWalkthrough() {
+        
         let stb = UIStoryboard(name: "Walkthrough", bundle: nil)
         let walkthrough = stb.instantiateViewControllerWithIdentifier("walk0") as! BWWalkthroughViewController
         let page_one = stb.instantiateViewControllerWithIdentifier("walk1") as UIViewController

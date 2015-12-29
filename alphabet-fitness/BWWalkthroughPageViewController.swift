@@ -83,7 +83,6 @@ class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPage {
                 subsWeights.append(speed)
             }
         }
-        
     }
     
     func walkthroughDidScroll(position: CGFloat, offset: CGFloat) {
