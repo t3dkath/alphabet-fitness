@@ -101,8 +101,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SPf-JM-fvq">
-                                <rect key="frame" x="166" y="120.5" width="268" height="309"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SPf-JM-fvq">
+                                <rect key="frame" x="166" y="121" width="268" height="314"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorial-logo-mark" translatesAutoresizingMaskIntoConstraints="NO" id="DwD-PS-EaD">
                                         <rect key="frame" x="59" y="0.0" width="150" height="161"/>
@@ -111,11 +111,11 @@
                                             <constraint firstAttribute="width" constant="150" id="Mce-8F-tlu"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Mei-ds-YQT">
-                                        <rect key="frame" x="0.0" y="171" width="268" height="138"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Mei-ds-YQT">
+                                        <rect key="frame" x="0.0" y="171" width="268" height="143"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGQ-wu-9CH">
-                                                <rect key="frame" x="79.5" y="0.0" width="109.5" height="36"/>
+                                                <rect key="frame" x="80" y="0.0" width="110" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="145" id="KxD-gg-Y74"/>
                                                     <constraint firstAttribute="height" constant="31" id="xkY-RR-BjS"/>
@@ -130,8 +130,8 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tX6-J3-FLt">
-                                                <rect key="frame" x="0.0" y="38" width="268" height="100"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tX6-J3-FLt">
+                                                <rect key="frame" x="0.0" y="43" width="268" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="gtq-em-Lrw"/>
                                                     <constraint firstAttribute="width" constant="268" id="qHJ-dx-Wmc"/>
@@ -171,8 +171,8 @@ Just pick a word and get ready to feel the burn!
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UEO-yL-wbq">
-                                <rect key="frame" x="145" y="128" width="310" height="293"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UEO-yL-wbq">
+                                <rect key="frame" x="145" y="128" width="310" height="298"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="30secs" translatesAutoresizingMaskIntoConstraints="NO" id="3TV-Wf-1I3">
                                         <rect key="frame" x="83" y="0.0" width="145" height="145"/>
@@ -181,8 +181,8 @@ Just pick a word and get ready to feel the burn!
                                             <constraint firstAttribute="width" constant="145" id="Qq1-Sf-Mes"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-rC-wQ9">
-                                        <rect key="frame" x="0.0" y="155" width="310" height="138"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-rC-wQ9">
+                                        <rect key="frame" x="0.0" y="155" width="310" height="143"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Getting started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3W-pO-sm2">
                                                 <rect key="frame" x="67" y="0.0" width="177" height="36"/>
@@ -201,7 +201,7 @@ Just pick a word and get ready to feel the burn!
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u55-nC-Y40">
-                                                <rect key="frame" x="0.0" y="38" width="310" height="100"/>
+                                                <rect key="frame" x="0.0" y="43" width="310" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="1cM-aX-191"/>
                                                     <constraint firstAttribute="width" constant="310" id="Tlc-Wp-q4J"/>

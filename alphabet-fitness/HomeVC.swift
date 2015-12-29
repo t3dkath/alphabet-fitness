@@ -40,17 +40,19 @@ class HomeVC: UIViewController, UITextFieldDelegate, BWWalkthroughViewController
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIPageControl.appearance().pageIndicatorTintColor = UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 1)
-        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(red: 217/255, green: 52/255, blue: 51/255, alpha: 1)
-        
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        
         if !userDefaults.boolForKey("walkthroughPresented") {
             showWalkthrough()
             userDefaults.setBool(true, forKey: "walkthroughPresented")
             userDefaults.synchronize()
         }
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
+    
     
     func showWalkthrough() {
         
