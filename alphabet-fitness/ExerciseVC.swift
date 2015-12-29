@@ -62,7 +62,11 @@ class ExerciseVC: UIViewController {
     }
     
     @IBAction func backBtnPressed() {
-        self.navigationController?.popViewControllerAnimated(true)
+        if let listView = self.navigationController?.viewControllers[1] as? WordVC {
+            self.navigationController?.popToViewController(listView, animated: true)
+        } else {
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
 
     @IBAction func onNextExercisePress() {
