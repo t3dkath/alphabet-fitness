@@ -55,6 +55,7 @@ class AlphaVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBAction func shuffleBtnPressed(sender: AnyObject) {
         ExerciseManager.instance.shuffleExercises()
+        ExerciseManager.instance.setWorkoutForWord("abcdefghijklmnopqrstuvwxyz")
         tableView.reloadData()
     }
     
