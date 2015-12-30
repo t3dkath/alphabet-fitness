@@ -18,8 +18,8 @@ class ExerciseVC: UIViewController {
     @IBOutlet weak var catTitleLbl: UILabel!
     @IBOutlet weak var catImage: UIImageView!
     
-    @IBOutlet weak var nextExerciseBtn: UIButton!
-    @IBOutlet weak var prevExerciseBtn: UIButton!
+    @IBOutlet weak var nextExerciseBtn: UIButton?
+    @IBOutlet weak var prevExerciseBtn: UIButton?
     
     var exercise: Exercise!
     var final: Bool = false
@@ -39,17 +39,16 @@ class ExerciseVC: UIViewController {
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
-        
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
-                if prevExerciseBtn.enabled {
+                if let btn = prevExerciseBtn where btn.enabled {
                     onPrevExercisePress()
                 } else {
                     backBtnPressed()
                 }
             case UISwipeGestureRecognizerDirection.Left:
-                if nextExerciseBtn.enabled {
+                if let btn = nextExerciseBtn where btn.enabled {
                     onNextExercisePress()
                 }
             default: break
@@ -62,10 +61,13 @@ class ExerciseVC: UIViewController {
     }
     
     @IBAction func backBtnPressed() {
-        if let listView = self.navigationController?.viewControllers[1] as? WordVC {
-            self.navigationController?.popToViewController(listView, animated: true)
-        } else {
-            self.navigationController?.popViewControllerAnimated(true)
+        
+        if let vcs = self.navigationController?.viewControllers {
+            if let listView = vcs[1] as? WordVC {
+                self.navigationController?.popToViewController(listView, animated: true)
+            } else {
+                self.navigationController?.popViewControllerAnimated(true)
+            }
         }
     }
 
@@ -73,7 +75,7 @@ class ExerciseVC: UIViewController {
         if !final {
             let newPos = ExerciseManager.instance.workoutPosition + 1
             ExerciseManager.instance.setWorkoutPosition(newPos)
-            loadNewExercise()
+            loadExerciseView("next")
         } else {
             performSegueWithIdentifier("FinishWorkout", sender: self)
         }
@@ -82,29 +84,42 @@ class ExerciseVC: UIViewController {
         let newPos = ExerciseManager.instance.workoutPosition - 1
         ExerciseManager.instance.setWorkoutPosition(newPos)
         
-        self.navigationController?.popViewControllerAnimated(true)
+        loadExerciseView("back")
     }
     
     
-    func loadNewExercise() {
-        let nextExercise:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ExerciseView") as UIViewController
+    func loadExerciseView(direction: String) {
+        let exercise:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ExerciseView") as UIViewController
         
-        self.navigationController?.pushViewController(nextExercise, animated: true)
+        if direction == "next" {
+            self.navigationController?.pushViewController(exercise, animated: true)
+        }
+        
+        else {
+            let curPos = self.navigationController?.viewControllers.indexOf(self)
+            if let prevView = self.navigationController?.viewControllers[curPos! - 1] {
+                if prevView.isKindOfClass(WordVC) {
+                    self.navigationController?.viewControllers.insert(exercise, atIndex: curPos!)
+                }
+            }
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
+    
     
     
     func loadExerciseDetail() {
-        prevExerciseBtn.enabled = true
-        prevExerciseBtn.alpha = 1
+        prevExerciseBtn?.enabled = true
+        prevExerciseBtn?.alpha = 1
         final = false
         
         if ExerciseManager.instance.workoutPosition >= ExerciseManager.instance.currentWorkout.count - 1 {
-            nextExerciseBtn.setTitle("FINISH", forState: .Normal)
+            nextExerciseBtn?.setTitle("FINISH", forState: .Normal)
             final = true
         }
         if ExerciseManager.instance.workoutPosition == 0 {
-            prevExerciseBtn.enabled = false
-            prevExerciseBtn.alpha = 0.5
+            prevExerciseBtn?.enabled = false
+            prevExerciseBtn?.alpha = 0.5
         }
         
         exercise = ExerciseManager.instance.currentWorkout[ExerciseManager.instance.workoutPosition]

@@ -100,6 +100,7 @@ class HomeVC: UIViewController, UITextFieldDelegate, BWWalkthroughViewController
         exercisesBtn.enabled = true
     }
     @IBAction func showAllExercises() {
+        ExerciseManager.instance.setWorkoutForWord("abcdefghijklmnopqrstuvwxyz")
         performSegueWithIdentifier("AlphaSegue", sender: self)
     }
     
@@ -107,7 +108,6 @@ class HomeVC: UIViewController, UITextFieldDelegate, BWWalkthroughViewController
         let word = wordInput.text!
         
         if isValidWord(word) {
-            ExerciseManager.instance.setWorkoutForWord(word)
             performSegueWithIdentifier("WordSegue", sender: self)
         } else {
             showError("Uh oh! Just letters please.")

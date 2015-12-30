@@ -49,9 +49,13 @@ class WordVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    @IBAction func startBtnPressed(sender: AnyObject) {
-        ExerciseManager.instance.setWorkoutPosition(0)
-        performSegueWithIdentifier("ExerciseView", sender: self)
+    @IBAction func startBtnPressed() {
+        goToExercise(0)
+    }
+    
+    func goToExercise(workoutPos: Int) {
+        ExerciseManager.instance.setWorkoutPosition(workoutPos)
+        performSegueWithIdentifier("ExerciseViewList", sender: self)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -71,6 +75,10 @@ class WordVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ExerciseManager.instance.currentWorkout.count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        goToExercise(indexPath.row)
     }
 
 }
