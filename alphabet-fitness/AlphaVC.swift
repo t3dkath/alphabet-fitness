@@ -43,6 +43,7 @@ class AlphaVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func goToExercise(workoutPos: Int) {
+        ExerciseManager.instance.setWorkoutForWord("abcdefghijklmnopqrstuvwxyz")
         ExerciseManager.instance.setWorkoutPosition(workoutPos)
         performSegueWithIdentifier("ExerciseViewList", sender: self)
     }
@@ -55,7 +56,6 @@ class AlphaVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBAction func shuffleBtnPressed(sender: AnyObject) {
         ExerciseManager.instance.shuffleExercises()
-        ExerciseManager.instance.setWorkoutForWord("abcdefghijklmnopqrstuvwxyz")
         tableView.reloadData()
     }
     
