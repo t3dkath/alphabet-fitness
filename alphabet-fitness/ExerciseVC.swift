@@ -127,7 +127,7 @@ class ExerciseVC: UIViewController {
         letterLbl.text = exercise.identifier
         exImage.image = exercise.image
         exTitleLbl.text = exercise.name
-        exDescLbl.text = exercise.description
+        exDescLbl.text = exercise.desc
         
         catTitleLbl.text = exercise.category.name
         catImage.image = exercise.category.image

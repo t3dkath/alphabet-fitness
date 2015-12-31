@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Exercise {
+class Exercise: NSObject, NSCoding {
     
     private var _identifier: String!
     private var _name: String!
@@ -20,7 +20,7 @@ class Exercise {
     var identifier: String { return _identifier }
     var name: String { return _name }
     var image: UIImage { return _image }
-    var description: String { return _description }
+    var desc: String { return _description }
     var category: Category { return _category }
     
     init(identifier: String, name: String, image: UIImage, description: String, category: Category) {
@@ -29,6 +29,22 @@ class Exercise {
         self._image = image
         self._description = description
         self._category = category
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        self._identifier = aDecoder.decodeObjectForKey("identifier") as? String ?? ""
+        self._name = aDecoder.decodeObjectForKey("name") as? String ?? ""
+        self._image = aDecoder.decodeObjectForKey("image") as? UIImage
+        self._description = aDecoder.decodeObjectForKey("desc") as? String ?? ""
+        self._category = aDecoder.decodeObjectForKey("category") as? Category
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(identifier, forKey: "identifier")
+        aCoder.encodeObject(name, forKey: "name")
+        aCoder.encodeObject(image, forKey: "image")
+        aCoder.encodeObject(desc, forKey: "desc")
+        aCoder.encodeObject(category, forKey: "category")
     }
     
 }

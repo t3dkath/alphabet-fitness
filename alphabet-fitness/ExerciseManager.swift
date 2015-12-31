@@ -14,6 +14,8 @@ class ExerciseManager {
     
     static let instance = ExerciseManager()
     
+    let EXERCISE_KEY = "exercises"
+    
     private var _exerciseList = [Exercise]()
     private var _categoryList = [Category]()
     private var _wordoutWord = ""
@@ -70,12 +72,15 @@ class ExerciseManager {
     
     init() {
         self.setRandomWord()
+        self.seedCategories()
         
-        //if exercise list already in memory
-            //loadexercise
-        //else
-            self.seedCategories()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if (userDefaults.objectForKey(EXERCISE_KEY) == nil) {
             self.seedExercises()
+        } else {
+            self.loadPosts()
+        }
+        
     }
     
     private func seedCategories() {
@@ -104,7 +109,7 @@ class ExerciseManager {
             i++
         }
         
-        //save exercise list
+        self.savePosts()
     }
     
     private func setRandomWord() {
@@ -180,5 +185,23 @@ class ExerciseManager {
         let categoryExercises = self._exerciseList.filter( { return $0.category.id == categoryId } )
         return categoryExercises
     }
+    
+    
+    
+    func savePosts() {
+        let postsData = NSKeyedArchiver.archivedDataWithRootObject(_exerciseList)
+        NSUserDefaults.standardUserDefaults().setObject(postsData, forKey: EXERCISE_KEY)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    func loadPosts() {
+        if let postsData = NSUserDefaults.standardUserDefaults().objectForKey(EXERCISE_KEY) as? NSData {
+            if let postsArray = NSKeyedUnarchiver.unarchiveObjectWithData(postsData) as? [Exercise] {
+                _exerciseList = postsArray
+            }
+        }
+    }
+    
+
     
 }

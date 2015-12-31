@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Category {
+class Category: NSObject, NSCoding {
     
     var _id: String!
     var _name: String!
@@ -23,5 +23,17 @@ class Category {
         self._id = id
         self._name = name
         self._image = image
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        self._id = aDecoder.decodeObjectForKey("id") as? String ?? ""
+        self._name = aDecoder.decodeObjectForKey("name") as? String ?? ""
+        self._image = aDecoder.decodeObjectForKey("image") as? UIImage
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(id, forKey: "id")
+        aCoder.encodeObject(name, forKey: "name")
+        aCoder.encodeObject(image, forKey: "image")
     }
 }

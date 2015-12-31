@@ -60,6 +60,7 @@ class HomeVC: UIViewController, UITextFieldDelegate, BWWalkthroughViewController
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if !userDefaults.boolForKey("walkthroughPresented") {
             showWalkthrough()
+            
             userDefaults.setBool(true, forKey: "walkthroughPresented")
             userDefaults.synchronize()
         }
