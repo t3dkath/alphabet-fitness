@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcO-8K-kho">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcO-8K-kho">
                                 <rect key="frame" x="525" y="76" width="60" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="TeE-qB-Uhh"/>
@@ -43,7 +43,7 @@
                                     <rect key="frame" x="189" y="523" width="23" height="37"/>
                                 </variation>
                             </pageControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="letter-header-bg" translatesAutoresizingMaskIntoConstraints="NO" id="7re-sl-h9K">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letter-header-bg" translatesAutoresizingMaskIntoConstraints="NO" id="7re-sl-h9K">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="101"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Cjl-Ot-BFg">
@@ -207,7 +207,7 @@ Just pick a word and get ready to feel the burn!
                                                     <constraint firstAttribute="width" constant="310" id="Tlc-Wp-q4J"/>
                                                 </constraints>
                                                 <string key="text">Pick any word or phrase and Alphabet Fitness will generate a workout for you.
-For a quick and intense workout, do each excerise for 30 seconds followed by a 10 second rest, the total length of workout is up to you.</string>
+For a quick and intense workout, do each exercise for 30 seconds followed by a 10 second rest, the total length of workout is up to you.</string>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>

@@ -24,6 +24,7 @@ class HomeVC: UIViewController, UITextFieldDelegate, BWWalkthroughViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSUserDefaults.standardUserDefaults().setDouble(1.0, forKey: "version")
         
         self.navigationController?.navigationBarHidden = true
         
